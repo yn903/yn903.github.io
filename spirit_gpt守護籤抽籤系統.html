@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spirit_GPT守護籤抽取系統</title>
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://i.pinimg.com/originals/05/74/27/0574274dcd6a687ee4f4aa3ab6f3d62a.jpg'); /* 替換為您想要使用的背景圖片的URL */
+    background-size: cover; /* 讓背景圖片填滿整個視窗 */
+    background-position: center; /* 將背景圖片置中 */
+    background-repeat: no-repeat; /* 禁止背景圖片重複 */
+    height: 100vh; /* 設定 body 元素的高度為視窗高度 */
+    display: flex; /* 使用 flexbox 來水平垂直置中內容 */
+    flex-direction: column; /* 將子元素排列為垂直方向 */
+    justify-content: center; /* 垂直置中 */
+    align-items: center; /* 水平置中 */
+}
+
+#displayedImage {
+    width: 800px; /* 裁切後的寬度 */
+    height: 700px; /* 裁切後的高度 */
+}
+
+#title {
+    margin-top: 20px; /* 調整標題與圖片之間的間距 */
+    text-align: center; /* 將文字置中 */
+    color: black; /* 設置文字顏色 */
+}
+
+#changeImage {
+    margin-top: 20px; /* 調整按鈕與標題之間的間距 */
+}
+</style>
+</head>
+<body>
+<div id="content">
+    <img id="displayedImage" src="" alt="妳/你今天的守護籤是?">
+</div>
+<div id="title">
+    <h1>Spirit_GPT守護籤抽取系統</h1>
+    <button id="changeImage">再次抽籤</button>
+</div>
+
+<script>
+// 圖片 URL 的陣列
+var imageUrls = [
+    'https://i.pinimg.com/originals/4b/4e/12/4b4e1230d0a09969b3a122167b7fa74a.jpg',
+    'https://i.pinimg.com/originals/09/b5/e7/09b5e78b3621aeda7e2b1a65a9ded62b.jpg',
+    'https://i.pinimg.com/originals/75/04/06/750406fdddcf9ec535dbf7049987b0ad.jpg',
+    // 如有需要，可添加更多圖片 URL
+];
+
+// 更換顯示的圖片的函數
+function changeImage() {
+    var randomIndex = Math.floor(Math.random() * imageUrls.length);
+    var randomImageUrl = imageUrls[randomIndex];
+    document.getElementById('displayedImage').src = randomImageUrl;
+    
+    // Google Tag Manager 事件
+    if (window.dataLayer) {
+        window.dataLayer.push({
+            'event': 'imageChange',
+            'imageSrc': randomImageUrl
+        });
+    }
+}
+
+// 按鈕點擊事件的監聽器
+document.getElementById('changeImage').addEventListener('click', changeImage);
+
+// 初始圖片更換
+changeImage();
+</script>
+
+<!-- Google Tag Manager (head) -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WNHVMJZK');</script>
+<!-- End Google Tag Manager (head) -->
+
+<!-- Google Tag Manager (body) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WNHVMJZK"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (body) -->
+
+</body>
+</html>
