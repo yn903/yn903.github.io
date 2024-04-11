@@ -30,8 +30,23 @@ body {
     color: black; /* 設置文字顏色 */
 }
 
-#changeImage {
-    margin-top: 20px; /* 調整按鈕與標題之間的間距 */
+/* 新增的按鈕樣式 */
+button {
+    font-size: 16px;
+    padding: 1em 3.3em;
+    cursor: pointer;
+    transform: perspective(200px) rotateX(15deg);
+    color: black;
+    font-weight: 900;
+    border-radius: 5px;
+}
+
+button:hover {
+    transform: perspective(180px) rotateX(30deg) translateY(2px);
+}
+
+button:active {
+    transform: perspective(170px) rotateX(36deg) translateY(5px);
 }
 </style>
 </head>
@@ -49,7 +64,7 @@ body {
 var imageUrls = [
     'https://i.pinimg.com/originals/e7/5f/8c/e75f8ca55b7618fcc0d057e093d7b305.jpg',
     'https://i.pinimg.com/originals/5a/dd/9c/5add9cc4731247b4ac14c3d393d3518d.jpg',
-    'https://i.pinimg.com/originals/a1/60/ca/a160cad3149d1a0ff5cd7886de02bddc.jpg,
+    'https://i.pinimg.com/originals/a1/60/ca/a160cad3149d1a0ff5cd7886de02bddc.jpg',
     'https://i.pinimg.com/originals/ff/6f/3b/ff6f3b45e32a7ea4b51a0ba8260df0d6.jpg'
     // 如有需要，可添加更多圖片 URL
 ];
