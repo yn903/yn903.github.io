@@ -33,20 +33,20 @@ body {
 /* 新增的按鈕樣式 */
 button {
     font-size: 16px;
-    padding: 1em 3.3em;
+    padding: 1em 3em;
     cursor: pointer;
-    transform: perspective(200px) rotateX(0deg);
+    transform: perspective(180px) rotateX(0deg);
     color: black;
     font-weight: 900;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 button:hover {
-    transform: perspective(180px) rotateX(30deg) translateY(2px);
+    transform: perspective(180px) rotateX(20deg) translateY(2px);
 }
 
 button:active {
-    transform: perspective(170px) rotateX(36deg) translateY(5px);
+    transform: perspective(160px) rotateX(30deg) translateY(4px);
 }
 </style>
 </head>
@@ -57,6 +57,9 @@ button:active {
 <div id="title">
     <h1>Spirit_GPT守護籤抽取系統</h1>
     <button id="changeImage">再次抽籤</button>
+    <a href="https://www.instagram.com/stories/" target="_blank"><button>分享至 IG限時動態</button></a>
+    <a href="https://line.me/R/msg/text/?妳/你今天的守護籤是?%20https://your-website-url.com" target="_blank"><button>分享至 Line</button></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=https://your-website-url.com" target="_blank"><button>分享至 Facebook</button></a>
 </div>
 
 <script>
